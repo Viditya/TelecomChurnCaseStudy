@@ -1,4 +1,4 @@
-Business Problem Overview
+#### Business Problem Overview
 
 In the telecom industry, customers are able to choose from multiple service providers and actively switch from one operator to another. In this highly competitive market, the telecommunications industry experiences an average of 15-25% annual churn rate. Given the fact that it costs 5-10 times more to acquire a new customer than to retain an existing one, customer retention has now become even more important than customer acquisition.
 
@@ -15,7 +15,7 @@ To reduce customer churn, telecom companies need to predict which customers are 
 In this project, you will analyse customer-level data of a leading telecom firm, build predictive models to identify customers at high risk of churn and identify the main indicators of churn.
 
  
-Understanding and Defining Churn
+#### Understanding and Defining Churn
 
 There are two main models of payment in the telecom industry - postpaid (customers pay a monthly/annual bill after using the services) and prepaid (customers pay/recharge with a certain amount in advance and then use the services).
 
@@ -37,7 +37,7 @@ This project is based on the Indian and Southeast Asian market.
 
  
 
-Definitions of Churn
+#### Definitions of Churn
 
 There are various ways to define churn, such as:
 
@@ -60,7 +60,7 @@ A potential shortcoming of this definition is that when the customer has stopped
 In this project, you will use the usage-based definition to define churn.
 
  
-High-value Churn
+#### High-value Churn
 
 In the Indian and the southeast Asian market, approximately 80% of revenue comes from the top 20% customers (called high-value customers). Thus, if we can reduce churn of the high-value customers, we will be able to reduce significant revenue leakage.
 
@@ -78,7 +78,7 @@ The business objective is to predict the churn in the last (i.e. the ninth) mont
 
  
 
-Understanding Customer Behaviour During Churn
+#### Understanding Customer Behaviour During Churn
 
 Customers usually do not decide to switch to another competitor instantly, but rather over a period of time (this is especially applicable to high-value customers). In churn prediction, we assume that there are three phases of customer lifecycle :
 
@@ -92,7 +92,7 @@ Customers usually do not decide to switch to another competitor instantly, but r
 
 In this case, since you are working over a four-month window, the first two months are the ‘good’ phase, the third month is the ‘action’ phase, while the fourth month is the ‘churn’ phase.
 
-Data Dictionary
+#### Data Dictionary
 
 The data dictionary contains meanings of abbreviations. Some frequent ones are loc (local), IC (incoming), OG (outgoing), T2T (telecom operator to telecom operator), T2O (telecom operator to another operator), RECH (recharge) etc.
 
@@ -101,19 +101,19 @@ The data dictionary contains meanings of abbreviations. Some frequent ones are l
 The attributes containing 6, 7, 8, 9 as suffixes imply that those correspond to the months 6, 7, 8, 9 respectively.
 
  
-Data Preparation
+#### Data Preparation
 
 The following data preparation steps are crucial for this problem:
 
  
 
-1. Derive new features
+#### 1. Derive new features
 
 This is one of the most important parts of data preparation since good features are often the differentiators between good and bad models. Use your business understanding to derive features you think could be important indicators of churn.
 
  
 
-2. Filter high-value customers
+#### 2. Filter high-value customers
 
 As mentioned above, you need to predict churn only for the high-value customers. Define high-value customers as follows: Those who have recharged with an amount more than or equal to X, where X is the 70th percentile of the average recharge amount in the first two months (the good phase).
 
@@ -123,7 +123,7 @@ After filtering the high-value customers, you should get about 29.9k rows.
 
  
 
-3. Tag churners and remove attributes of the churn phase
+#### 3. Tag churners and remove attributes of the churn phase
 
 Now tag the churned customers (churn=1, else 0) based on the fourth month as follows: Those who have not made any calls (either incoming or outgoing) AND have not used mobile internet even once in the churn phase. The attributes you need to use to tag churners are:
 
@@ -140,7 +140,7 @@ After tagging churners, remove all the attributes corresponding to the churn pha
 
  
 
-Modelling
+#### Modelling
 
 Build models to predict churn. The predictive model that you’re going to build will serve two purposes:
 
